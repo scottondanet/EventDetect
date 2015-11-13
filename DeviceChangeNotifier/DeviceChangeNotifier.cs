@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Windows.Forms;
 
-namespace EventDetect
+namespace DeviceChangeNotifier
 {
     public class DeviceChangeNotifier : Form
     {

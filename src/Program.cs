@@ -7,17 +7,17 @@ namespace EventDetect
     {
         private static void Main()
         {
-            DeviceChangeNotifier.DeviceNotify += DeviceChangeNotifierOnDeviceNotify;
-            DeviceChangeNotifier.Start();
+            DeviceChangeNotifier.DeviceChangeNotifier.DeviceNotify += DeviceChangeNotifierOnDeviceNotify;
+            DeviceChangeNotifier.DeviceChangeNotifier.Start();
 
 
             Console.ReadKey();
-            DeviceChangeNotifier.Stop();
+            DeviceChangeNotifier.DeviceChangeNotifier.Stop();
         }
 
-        private static void DeviceChangeNotifierOnDeviceNotify(Message msg)
+        private static void DeviceChangeNotifierOnDeviceNotify(Message message)
         {
-            Console.WriteLine("Message: {0}, {1}, {2}, {3}", msg.Msg, msg.LParam, msg.WParam, msg.Result);
+            Console.WriteLine("Message: {0}, {1}, {2}, {3}", message.Msg, message.LParam, message.WParam, message.Result);
         }
     }
 }
